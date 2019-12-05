@@ -70,6 +70,7 @@ while not rospy.is_shutdown():
     msg.pose.pose.position.y = new_y
     msg.pose.pose.position.z = 1
     msg.pose.pose.orientation.w = math.cos(new_theta / 2)
+    msg.pose.pose.orientation.z = math.sin(new_theta / 2)
     odom_pub.publish(msg)
     last_x = new_x
     last_y = new_y
