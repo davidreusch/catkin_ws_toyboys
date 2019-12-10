@@ -23,6 +23,7 @@ class OdoMeasurer():
         if self.initial_pose:
             self.initial_x = data.pose.pose.position.x
             self.initial_y = data.pose.pose.position.y
+            #eher 2*math.acos...?
             self.initial_theta = math.acos(data.pose.pose.orientation.w)
 
             self.initial_pose = False
