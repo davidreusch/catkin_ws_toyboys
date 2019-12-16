@@ -6,102 +6,94 @@ from nav_msgs.msg import Odometry
 import numpy
 import math
 import tf
+import sys
 
-goal_theta = 0
-
+pi = math.pi
 
 class OdoMeasurer():
     def __init__(self):
         self.initial_pose = True
         self.initial_steering = True
-        self.initial_x = 0
-        self.initial_y = 0
         self.theta = 0 
-        self.speed = 0
         ceiling_cam_sub = rospy.Subscriber('/communication/gps/5', Odometry, self.ceiling_callback)
-#        odom_sub = rospy.Subscriber('/sensors/localization/filtered_map', Odometry, self.odom_callback)
         steering_angle_sub = rospy.Subscriber('/sensors/steering', SteeringAngle, self.steering_callback)
-        speed_sub = rospy.Subscriber('/sensors/speed', Speed, self.speed_callback)
 
     def ceiling_callback(self,data):
-#        self.initial_x = data.pose.pose.position.x
-#        self.initial_y = data.pose.pose.position.y
-        #eher 2*math.acos...?
         self.theta = tf.transformations.euler_from_quaternion([data.pose.pose.orientation.w,data.pose.pose.orientation.x,data.pose.pose.orientation.y,data.pose.pose.orientation.z])[0]
 
-    def odom_callback(self,data):
-        #eher 2*math.acos...?
-        self.theta = 2 * math.acos(data.pose.pose.orientation.w)
-    
     def steering_callback(self,data):
         self.steering= data.value
 
-    def speed_callback(self,data):
-        self.speed= data.value
+def error_signed(wanted_angle,theta):
+    # let the angles wrap around 2pi and calculate smaller distance, left or right
+    # TO DO: would be better computationally to wrap around pi as the angles
+    # are given wrapped around pi
+    # like this it was easier to think of for me
+
+    wanted_angle  %= 2*pi 
+    theta  %= 2*pi 
+
+    right_dist = (2*pi - theta + wanted_angle) % (2 * pi)
+    left_dist =  (2*pi - wanted_angle + theta) % (2 * pi)
+
+    if right_dist < left_dist:
+        return -right_dist #negative value for steering to right
+    else:
+        return left_dist  #positive for steering to left
 
 
+# ---main--- 
 
-
-def ferror(wanted_angle,theta):
-    return abs(wanted_angle - abs(theta))
-
-def fsteering(wanted_angle, theta):
-
-    error = 0
-    if wanted_angle == 0:
-        error = (theta / math.pi) 
-    elif wanted_angle == math.pi:
-        if theta < 0:
-            error = (math.pi + theta) / math.pi
-        else:
-            error = (math.pi - theta) / -math.pi
-    return error
-
-
+if len(sys.argv) < 2:
+    print("please enter desired angle in the coordinate system used by communication/gps")
+    sys.exit()
 
 rospy.init_node('my_odometry', anonymous=True)
-#odom_pub = rospy.Publisher('/my_odom', Odometry, queue_size=100 )
+
+# ---Publishers---
 speed_pub = rospy.Publisher('/actuators/speed', SpeedCommand, queue_size=10)
 steering_pub = rospy.Publisher('/actuators/speed', SpeedCommand, queue_size=10)
 pub_steering = rospy.Publisher("/actuators/steering_normalized",NormalizedSteeringCommand,queue_size=100)
 
-
-direction = 0
-
 odo = OdoMeasurer()
 rospy.sleep(1)
 
-r = rospy.Rate(100)
-Kp = 0.9
-wanted_angle = 0
+# constants
+Kp = 3 
+Kd = 0.5
+wanted_angle = float(sys.argv[1])
+
+# initialize loop variables
 theta = odo.theta
-old_error = ferror(wanted_angle, theta)
+old_error = abs(error_signed(wanted_angle, theta))
 t = 0
+error_diff = 0
+
+# main loop
+r = rospy.Rate(100)
 while not rospy.is_shutdown():
 
     theta = odo.theta
-    print(theta)
-    
-    error = ferror(wanted_angle, theta)
-    steering_angle = Kp * fsteering(wanted_angle, theta)
-
-
-    pub_steering.publish(value=steering_angle)
     speed_pub.publish(value=0.2)
     
-    if (t % 5 == 0):
-        m = - (old_error - error)
-        old_error = error
-        print(m)
-
-
+    # get steering with direction
+    steering = error_signed(wanted_angle, theta) / math.pi
+    # get absolute error
+    error = abs(steering)
     
-    t = (t+1) % 1000
+    # dont measure error too often, only every 16th loop
+    # so the noise is not too big
+    if (t == 0):
+        error_diff = error - old_error
+        old_error = error
+    t = (t+1) % 16
+
+    # control formula 
+    steering_angle = Kp * steering + (Kd * error_diff) / math.pi
+
+    pub_steering.publish(value=steering_angle)
     
     r.sleep()
-
-speed_pub.publish(value=0)
-
 
 rospy.spin()
 
