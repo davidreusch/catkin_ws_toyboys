@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix
+
+Name: fisheye_camera_matrix
+Description: Description of fisheye_camera_matrix
+Version: 0.1.0
+Cflags: -I/home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix/include -I/home/davidlin/catkin_ws_toyboys/src/fisheye_camera_matrix/include -I/home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix_msgs/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/include -I/usr/include/opencv
+Libs: -L/home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix/lib -lfisheye_camera_matrix
+Requires: cv_bridge image_transport geometry_msgs message_runtime fisheye_camera_matrix_msgs

@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/install
+
+Name: fub_trajectory_msgs
+Description: Description of fub_trajectory_msgs
+Version: 0.0.1
+Cflags: -I/home/davidlin/catkin_ws_toyboys/install/include
+Libs: -L/home/davidlin/catkin_ws_toyboys/install/lib 
+Requires: geometry_msgs message_runtime

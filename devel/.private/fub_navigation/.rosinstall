@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/davidlin/catkin_ws_toyboys/devel/.private/fub_navigation/setup.sh

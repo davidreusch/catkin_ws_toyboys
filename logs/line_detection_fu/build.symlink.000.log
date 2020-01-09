@@ -1,0 +1,12 @@
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/libLaneDetectorFu.so
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/pkgconfig/line_detection_fu.pc
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/line_detection_fu/line_detection_fu_node
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/python2.7/dist-packages/line_detection_fu/__init__.py
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/python2.7/dist-packages/line_detection_fu/cfg/LaneDetectionConfig.py
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/python2.7/dist-packages/line_detection_fu/cfg/__init__.py
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/include/line_detection_fu/LaneDetectionConfig.h
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/line_detection_fu/cmake/line_detection_fuConfig-version.cmake
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/line_detection_fu/cmake/line_detection_fuConfig.cmake
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/line_detection_fu/docs/LaneDetectionConfig.dox
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/line_detection_fu/docs/LaneDetectionConfig.wikidoc
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/line_detection_fu/docs/LaneDetectionConfig-usage.dox

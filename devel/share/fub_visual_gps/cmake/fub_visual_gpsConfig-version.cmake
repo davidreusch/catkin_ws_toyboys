@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/fub_visual_gps/share/fub_visual_gps/cmake/fub_visual_gpsConfig-version.cmake

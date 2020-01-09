@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/lib/pkgconfig/ass10_splines.pc

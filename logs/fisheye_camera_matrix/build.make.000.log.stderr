@@ -1,0 +1,8 @@
+[01m[K/home/davidlin/catkin_ws_toyboys/src/fisheye_camera_matrix/src/camera_matrix_publisher.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kfisheye_camera_matrix/perspective_projection.h: No such file or directory
+ #include [01;31m[K<fisheye_camera_matrix/perspective_projection.h>[m[K
+          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/camera_matrix_publisher.dir/src/camera_matrix_publisher.cpp.o] Error 1
+make[1]: *** [CMakeFiles/camera_matrix_publisher.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [all] Error 2

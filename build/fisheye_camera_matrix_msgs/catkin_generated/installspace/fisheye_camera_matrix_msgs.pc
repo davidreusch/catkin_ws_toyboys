@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/install
+
+Name: fisheye_camera_matrix_msgs
+Description: Description of fisheye_camera_matrix_msgs
+Version: 0.1.0
+Cflags: -I/home/davidlin/catkin_ws_toyboys/install/include
+Libs: -L/home/davidlin/catkin_ws_toyboys/install/lib 
+Requires: 

@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass6_ransac/share/ass6_ransac/cmake/ass6_ransacConfig-version.cmake

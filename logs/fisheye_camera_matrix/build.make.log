@@ -1,0 +1,24 @@
+[ 11%] Built target fisheye_camera_matrix
+[ 27%] Built target offline_calibration_manual
+[ 33%] [32mBuilding CXX object CMakeFiles/camera_matrix_publisher.dir/src/camera_matrix_publisher.cpp.o[0m
+[ 50%] Built target undistorted_image_publisher
+[ 50%] Built target geometry_msgs_generate_messages_cpp
+[ 50%] Built target _fisheye_camera_matrix_generate_messages_check_deps_perspective_projection
+[ 50%] Built target std_msgs_generate_messages_cpp
+[ 50%] Built target geometry_msgs_generate_messages_py
+[ 50%] Built target std_msgs_generate_messages_py
+[ 50%] Built target geometry_msgs_generate_messages_eus
+[ 50%] Built target std_msgs_generate_messages_eus
+[ 50%] Built target geometry_msgs_generate_messages_lisp
+[ 50%] Built target std_msgs_generate_messages_nodejs
+[ 50%] Built target std_msgs_generate_messages_lisp
+[ 55%] Built target fisheye_camera_matrix_generate_messages_cpp
+[ 55%] Built target geometry_msgs_generate_messages_nodejs
+[ 66%] Built target fisheye_camera_matrix_generate_messages_py
+[ 72%] Built target fisheye_camera_matrix_generate_messages_lisp
+[ 83%] Built target fisheye_camera_matrix_generate_messages_eus
+[ 88%] Built target fisheye_camera_matrix_generate_messages_nodejs
+[35m[1mScanning dependencies of target fisheye_camera_matrix_generate_messages[0m
+[ 88%] Built target fisheye_camera_matrix_generate_messages
+[ 94%] [32m[1mLinking CXX executable /home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix/lib/fisheye_camera_matrix/camera_matrix_publisher[0m
+[100%] Built target camera_matrix_publisher

@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/devel/.private/fub_navigation
+
+Name: fub_navigation
+Description: Description of fub_navigation
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/davidlin/catkin_ws_toyboys/devel/.private/fub_navigation/lib 
+Requires: 

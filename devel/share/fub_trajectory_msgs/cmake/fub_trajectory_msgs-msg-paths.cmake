@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/fub_trajectory_msgs/share/fub_trajectory_msgs/cmake/fub_trajectory_msgs-msg-paths.cmake

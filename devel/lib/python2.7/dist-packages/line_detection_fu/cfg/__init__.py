@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/line_detection_fu/lib/python2.7/dist-packages/line_detection_fu/cfg/__init__.py

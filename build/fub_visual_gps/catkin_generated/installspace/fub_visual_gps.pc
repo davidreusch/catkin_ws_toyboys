@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/install
+
+Name: fub_visual_gps
+Description: Description of fub_visual_gps
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/davidlin/catkin_ws_toyboys/install/lib 
+Requires: 

@@ -1,0 +1,6 @@
+devel_space: /home/davidlin/catkin_ws_toyboys/devel
+install: false
+install_space: /home/davidlin/catkin_ws_toyboys/install
+profile: default
+source_space: /home/davidlin/catkin_ws_toyboys/src
+workspace: /home/davidlin/catkin_ws_toyboys

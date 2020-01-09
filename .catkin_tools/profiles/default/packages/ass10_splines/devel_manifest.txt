@@ -1,0 +1,5 @@
+ass10_splines
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/cmake.lock /home/davidlin/catkin_ws_toyboys/devel/./cmake.lock
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/lib/pkgconfig/ass10_splines.pc /home/davidlin/catkin_ws_toyboys/devel/lib/pkgconfig/ass10_splines.pc
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/share/ass10_splines/cmake/ass10_splinesConfig.cmake /home/davidlin/catkin_ws_toyboys/devel/share/ass10_splines/cmake/ass10_splinesConfig.cmake
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/share/ass10_splines/cmake/ass10_splinesConfig-version.cmake /home/davidlin/catkin_ws_toyboys/devel/share/ass10_splines/cmake/ass10_splinesConfig-version.cmake

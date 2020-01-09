@@ -1,0 +1,4 @@
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/pkgconfig/fub_visual_gps.pc
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/fub_visual_gps/fub_visual_gps_minarea
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/fub_visual_gps/cmake/fub_visual_gpsConfig-version.cmake
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/fub_visual_gps/cmake/fub_visual_gpsConfig.cmake

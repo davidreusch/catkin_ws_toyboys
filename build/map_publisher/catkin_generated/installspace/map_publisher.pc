@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/install
+
+Name: map_publisher
+Description: Description of map_publisher
+Version: 0.0.1
+Cflags: 
+Libs: -L/home/davidlin/catkin_ws_toyboys/install/lib 
+Requires: map_server

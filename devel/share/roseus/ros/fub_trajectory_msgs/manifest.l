@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/fub_trajectory_msgs/share/roseus/ros/fub_trajectory_msgs/manifest.l

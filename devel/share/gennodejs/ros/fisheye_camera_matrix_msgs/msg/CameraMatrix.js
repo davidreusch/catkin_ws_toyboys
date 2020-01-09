@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/fisheye_camera_matrix_msgs/share/gennodejs/ros/fisheye_camera_matrix_msgs/msg/CameraMatrix.js

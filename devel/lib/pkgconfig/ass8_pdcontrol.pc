@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/ass8_pdcontrol/lib/pkgconfig/ass8_pdcontrol.pc

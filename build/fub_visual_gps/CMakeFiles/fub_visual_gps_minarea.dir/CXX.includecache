@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/davidlin/catkin_ws_toyboys/src/fub_visual_gps/src/misc/minarea.cpp
+opencv2/highgui.hpp
+/home/davidlin/catkin_ws_toyboys/src/fub_visual_gps/src/misc/opencv2/highgui.hpp
+opencv2/imgproc.hpp
+/home/davidlin/catkin_ws_toyboys/src/fub_visual_gps/src/misc/opencv2/imgproc.hpp
+iostream
+-
+

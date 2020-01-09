@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/devel/.private/ass7_odometry
+
+Name: ass7_odometry
+Description: Description of ass7_odometry
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/davidlin/catkin_ws_toyboys/devel/.private/ass7_odometry/lib 
+Requires: 

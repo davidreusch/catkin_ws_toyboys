@@ -1,0 +1,8 @@
+prefix=/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines
+
+Name: ass10_splines
+Description: Description of ass10_splines
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/davidlin/catkin_ws_toyboys/devel/.private/ass10_splines/lib 
+Requires: 

@@ -1,0 +1,1 @@
+/home/davidlin/catkin_ws_toyboys/devel/.private/fub_navigation/share/fub_navigation/cmake/fub_navigationConfig.cmake

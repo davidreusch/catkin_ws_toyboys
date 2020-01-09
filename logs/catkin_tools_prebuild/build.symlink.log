@@ -1,0 +1,12 @@
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./local_setup.zsh
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./local_setup.bash
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./_setup_util.py
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./setup.bash
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./cmake.lock
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./env.sh
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./setup.zsh
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./local_setup.sh
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/./setup.sh
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/lib/pkgconfig/catkin_tools_prebuild.pc
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig.cmake
+Symlinking /home/davidlin/catkin_ws_toyboys/devel/share/catkin_tools_prebuild/cmake/catkin_tools_prebuildConfig-version.cmake
