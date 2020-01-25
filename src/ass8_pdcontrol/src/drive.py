@@ -16,7 +16,7 @@ def talker():
         steer_msg.value = 1.0
         steer_pub.publish(steer_msg)
         speed_msg = SpeedCommand()
-        speed_msg.value = 0.3
+        speed_msg.value = 0.6
         speed_pub.publish(speed_msg)
         rate.sleep()
 
