@@ -1,4 +1,5 @@
-#!/usr/bin/python3.6
+#!/usr/bin/python
+#3.6
 
 import numpy
 from scipy.interpolate import CubicSpline
@@ -55,7 +56,7 @@ def closest_point(spline, targetpoint, lookahead = 0):
     """calculate closest point to targetpoint on spline. lookahead gives a point a certain distance further on the spline"""
     arc, xspline, yspline = spline
     arclen = len(arc)
-    step = 64
+    step = 128
     low = 0
     high = arclen
     index = 0
@@ -77,7 +78,7 @@ def closest_point(spline, targetpoint, lookahead = 0):
         high = (index + step) % arclen
 
         # smaller step for next iteration
-        step //= 4
+        step //= 2
 
     # if we have lookahead, get point on spline with further lookahead
     if lookahead > 0:
@@ -103,25 +104,25 @@ def lane_callback(data):
 rospy.init_node('spliner', anonymous=True)
 
 #sub = rospy.Subscriber("/communication/gps/6", Odometry, gps_callback)
-gps_sub = rospy.Subscriber('/localization/odometry/filtered_map', Odometry, gps_callback)
+gps_sub = rospy.Subscriber('/sensors/localization/filtered_map', Odometry, gps_callback)
 # subscriber writes the clicked Point into the variable clickedPoint
-lane_sub = rospy.Subscriber('/toyboys_lane', int, lane_callback)
+#lane_sub = rospy.Subscriber('/toyboys_lane', int, lane_callback)
 
 gps_pos = Point()
 
 lane = 1
 
-spline1 = get_spline("/home/davidlin/robotik/u10/lane1.npy")
-spline2 = get_spline("/home/davidlin/robotik/u10/lane2.npy")
+spline1 = get_spline("/home/julian/Downloads/lane1.npy")
+spline2 = get_spline("/home/julian/Downloads/lane2.npy")
 
 closest_point_pub = rospy.Publisher('/lookahead', Point, queue_size=100)
 
 while not rospy.is_shutdown():
     if lane == 1:
-        point = closest_point(spline1, (gps_pos.x, gps_pos.y), lookahead=10)
+        point = closest_point(spline1, (gps_pos.x, gps_pos.y), lookahead=3)
         closest_point_pub.publish(point)
     elif lane == 2:
-        point = closest_point(spline2, (gps_pos.x, gps_pos.y), lookahead=10)
+        point = closest_point(spline2, (gps_pos.x, gps_pos.y), lookahead=3)
         closest_point_pub.publish(point)
 
 try:

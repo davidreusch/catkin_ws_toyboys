@@ -18,7 +18,10 @@ class OdoMeasurer:
         self.theta = 0
         self.wanted_angle = pi
         #ceiling_cam_sub = rospy.Subscriber('/communication/gps/6', Odometry, self.ceiling_callback)
-        ceiling_cam_sub = rospy.Subscriber('/localization/odometry/filtered_map', Odometry, self.ceiling_callback)
+
+
+
+        ceiling_cam_sub = rospy.Subscriber('/sensors/localization/filtered_map', Odometry, self.ceiling_callback)
         steering_angle_sub = rospy.Subscriber('/sensors/steering', SteeringAngle, self.steering_callback)
         wanted_angle_sub = rospy.Subscriber("/angle", Float64, self.wanted_angle_callback)
 
@@ -72,7 +75,7 @@ def error_signed(wanted_angle, theta):
 
 
 
-# ---main--- 
+# ---main---
 
 
 rospy.init_node('my_odometry', anonymous=True)
@@ -86,8 +89,8 @@ measurer = OdoMeasurer()
 rospy.sleep(1)
 
 # constants
-Kp = 1
-Kd = 0.1
+Kp = 2
+Kd = 0.5
 
 # initialize loop variables
 wanted_angle = measurer.wanted_angle
@@ -98,7 +101,7 @@ t = 0
 error_diff = 0
 
 # main loop
-r = rospy.Rate(100)
+r = rospy.Rate(50)
 while not rospy.is_shutdown():
 
     wanted_angle = measurer.wanted_angle
@@ -115,12 +118,12 @@ while not rospy.is_shutdown():
     # dont measure error too often, only every 16th loop
     # so the noise is not too big
     #if (t == 0):
-    error_diff = error - old_error
+    error_diff = (error - old_error) / math.pi
     old_error = error
     #t = (t + 1) % 16
 
-    # control formula 
-    steering_angle = Kp * steering + (Kd * error_diff) / math.pi
+    # control formula
+    steering_angle = Kp * steering + Kd * error_diff
 
     pub_steering.publish(value=steering_angle)
 
