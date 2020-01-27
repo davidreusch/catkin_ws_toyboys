@@ -21,7 +21,8 @@ class Measurer():
         self.theta = 0
         self.position = Point(x=0, y=0, z=0)
         self.steer_to = 0
-        ceiling_cam_sub = rospy.Subscriber('/communication/gps/6', Odometry, self.ceiling_callback)
+        #ceiling_cam_sub = rospy.Subscriber('/communication/gps/6', Odometry, self.ceiling_callback)
+        ceiling_cam_sub = rospy.Subscriber('/localization/odometry/filtered_map', Odometry, self.ceiling_callback)
         steering_angle_sub = rospy.Subscriber('/sensors/steering', SteeringAngle, self.steering_callback)
         lookahead_sub = rospy.Subscriber("/lookahead", Point, self.lookahead_callback)
 

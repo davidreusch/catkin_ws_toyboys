@@ -95,20 +95,34 @@ def gps_callback(data):
     global gps_pos
     gps_pos = data.pose.pose.position
 
+def lane_callback(data):
+    global lane
+    lane = data.data
+
 # --- Main ---
 rospy.init_node('spliner', anonymous=True)
 
-sub = rospy.Subscriber("/communication/gps/6", Odometry, gps_callback)
+#sub = rospy.Subscriber("/communication/gps/6", Odometry, gps_callback)
+gps_sub = rospy.Subscriber('/localization/odometry/filtered_map', Odometry, gps_callback)
 # subscriber writes the clicked Point into the variable clickedPoint
+lane_sub = rospy.Subscriber('/toyboys_lane', int, lane_callback)
 
 gps_pos = Point()
-spline = get_spline("/home/davidlin/robotik/u10/lane2.npy")
+
+lane = 1
+
+spline1 = get_spline("/home/davidlin/robotik/u10/lane1.npy")
+spline2 = get_spline("/home/davidlin/robotik/u10/lane2.npy")
 
 closest_point_pub = rospy.Publisher('/lookahead', Point, queue_size=100)
 
 while not rospy.is_shutdown():
-    point = closest_point(spline, (gps_pos.x, gps_pos.y), lookahead=5)
-    closest_point_pub.publish(point)
+    if lane == 1:
+        point = closest_point(spline1, (gps_pos.x, gps_pos.y), lookahead=10)
+        closest_point_pub.publish(point)
+    elif lane == 2:
+        point = closest_point(spline2, (gps_pos.x, gps_pos.y), lookahead=10)
+        closest_point_pub.publish(point)
 
 try:
     rospy.spin()

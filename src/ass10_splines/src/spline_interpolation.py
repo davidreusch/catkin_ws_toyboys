@@ -122,23 +122,23 @@ spline_msg.scale.x = 0.1
 spline_msg.scale.y = 0.1
 spline_msg.scale.z = 0.1
 
-closest_point_pub = rospy.Publisher('/mypoint', Marker, queue_size=100)
+closest_point_pub = rospy.Publisher('/lookahead', Point, queue_size=100)
 
 while not rospy.is_shutdown():
     spline_pub.publish(spline_msg)
 
     point = closest_point(spline, (clickedPoint.x, clickedPoint.y), lookahead=200)
-    click_msg = Marker()
-    click_msg.type = 2
-    click_msg.pose.position = point
-    click_msg.header.frame_id = "map"
-    click_msg.color.b = 100
-    click_msg.color.a = 100
-    click_msg.scale.x = 0.1
-    click_msg.scale.y = 0.1
-    click_msg.scale.z = 0.1
-
-    closest_point_pub.publish(click_msg)
+    closest_point_pub.publish(point)
+#    click_msg = Marker()
+#    click_msg.type = 2
+#    click_msg.pose.position = point
+#    click_msg.header.frame_id = "map"
+#    click_msg.color.b = 100
+#    click_msg.color.a = 100
+#    click_msg.scale.x = 0.1
+#    click_msg.scale.y = 0.1
+#    click_msg.scale.z = 0.1
+#    closest_point_pub.publish(click_msg)
 
 try:
     rospy.spin()
